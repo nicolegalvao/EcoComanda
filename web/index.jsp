@@ -19,6 +19,10 @@ i2.setQuantidade(1);
 i2.setNome("Bolinho");
 i2.setPreco(34.00);
 lista.add(i2); 
+String rem = request.getParameter("remover");
+if(rem != null) {
+    lista.remove(Integer.parseInt(rem));
+}
  %>
 <body>
 <p>COMANDA</p>
@@ -55,6 +59,7 @@ lista.add(i2);
        value="<%= item.getQuantidade()%>">
 </td>
  		<td><%= item.getPreco() %></td>
+                <td><a href="index.jsp?remover=<%=i%>">X</a></td>
  	    <% } %>
 	</tr>	
 	</table>
